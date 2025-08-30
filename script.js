@@ -47,7 +47,7 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
 document.getElementById("checkoutBtn").addEventListener("click", () => {
     if(cart.length === 0) { alert("Your cart is empty!"); return; }
     localStorage.setItem("cartItems", JSON.stringify(cart));
-    window.location.href = "payment.html";
+    window.location.href = "Payment.html";
 });
 
 document.querySelector('a[href="#addcard"]').addEventListener("click", e => {
@@ -76,5 +76,6 @@ function showOnScroll() {
 
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
+
 
 
