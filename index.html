@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Shop Smart</a>
+        <nav class="navbar">
+            <a href="#Home" style="--i:1" class="active">Home</a>
+            <a href="#Fashion" style="--i:2" >Fashion</a>
+            <a href="#addcard" style="--i:4">Add Card (<span id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <section id="Home" class="content">
+        <h1>New arrival for men & women</h1>
+        <p>Get 30% offer in shop Smart</p>
+        <button id="Fashion" onclick="location.href='#Fashion'">Shop Now</button>
+
+    </section>
+
+    <h1 class="pheading">Our new Arrival</h1>
+    <section id="Fashion" class="Fashion-info">
+        <div class="product">
+
+            <div class="card">
+                <div class="img"><img src="pg1.webp"> </div>
+                <div class="title">Zenith watch</div>
+                <div class="desc">Men Watch</div>
+                <div class="box">
+                    <div class="price">$1,550</div>
+                    <button  class="button add-to-cart" data-title="Zenith watch" data-price="1550"><a href="#">Add card</a></button>
+                </div>
+                <button class="buy-btn"><a href="card1.html">Buy Now</a></button>
+            </div>
+
+            <div class="card1">
+                <div class="img"><img src="pg2.webp"> </div>
+                <div class="title">Zenith watch</div>
+                <div class="desc1">Men Watch</div>
+                <div class="box">
+                    <div class="price">$1,950</div>
+                    <button   class="button add-to-cart" data-title="Zenith watch" data-price="1950" ><a href="#">Add card</a></button>
+                </div>
+                <button  class="buy-btn"><a href="card1.html">Buy Now</a></button>
+            </div>
+
+            <div class="card2">
+                <div class="img"><img src="backcpain3.png"> </div>
+                <div class="title">Backcpain watch</div>
+                <div class="desc2">Men Watch</div>
+                <div class="box">
+                    <div class="price">$2,250</div>
+                    <button  class="button add-to-cart" data-title="Zenith watch" data-price="2250"><a href="#">Add card</a></button>
+                </div>
+                <button class="buy-btn"><a href="card1.html">Buy Now</a></button>
+            </div>
+
+            <div class="card3">
+                <div class="img"><img src="omega1.jpg"> </div>
+                <div class="title">omega watch</div>
+                <div class="desc3">women Watch</div>
+                <div class="box">
+                    <div class="price">$2,999</div>
+                    <button  class="button add-to-cart" data-title="Zenith watch" data-price="2999"><a href="#">Add card</a></button>
+                </div>
+                <button class="buy-btn"><a href="card1.html">Buy Now</a></button>
+            </div>
+        </div>
+    </section>
+    <div class="sidebar" id="addcard">
+        <div class="sidebar-close" id="closeSidebar">
+           &#10005;
+        </div>
+        <div class="sidebar-info">
+            <h2>My Card</h2>
+            <div class="card-item">Item 1</div>
+        </div>
+
+        <div class="sidebar--footer">
+            <div class="total--amount">
+                <h5>Total</h5>
+                <div class="card-total">$0.00</div>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>Shop Smart</h2>
+                 <p>Your one-stop shop for watches and accessories.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick links</h4>
+                <ul>
+                    <li><a href="#Home" style="--i:1" class="active">Home</a></li>
+                    <li><a href="#Fashion" style="--i:2" >Fashion</a></li>
+                </ul>
+            </div>
+             <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@shopsmart.com</p>
+            <p>Phone: +91 9876543210</p>
+            <p>Address: Chennai, India</p>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2025 Shop Smart. All Rights Reserved.</p>
+    </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

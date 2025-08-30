@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Smart</title>
+
+    <style>
+    
+      .header {
+        width: 100%;
+        height: 70px;
+        background-color: rgb(162, 219, 219);
+        display: flex;
+        align-items: center;
+      }
+      .logo-info{
+        width: 200px;
+      }
+      .logo {
+        font-size: 22px;
+        font-weight: bolder;
+        text-decoration: none;
+        margin-left: 5%;
+        padding-top: 30px;
+        color: black;
+      }
+      
+      .logo:hover {
+        border-bottom: 4px solid red;
+      }
+      .navbar {
+        padding-left: 70%;
+      }
+      .navbar a {
+        padding-left: 20px;
+        font-size: 19px;
+        font-weight: bolder;
+        text-decoration: none;
+        color: black;
+      }
+      nav a:hover,
+      nav a.active {
+        text-decoration: underline solid red 2px;
+      }
+      .navbar a:hover,
+      a:focus {
+        text-decoration: underline solid red 2px;
+      }
+
+     
+      .card-1 {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 40px;
+      }
+      .img-card img {
+        width: 350px;
+        height: 100%;
+        padding-left: 50px;
+      }
+      .card-1 .card-content {
+        padding-left: 80px;
+      }
+      .card-1 .card-content h4 {
+        font-weight: bolder;
+      }
+      .card-1 .card-content .rate i {
+        color: rgb(252, 0, 0);
+        font-size: 19px;
+        font-weight: bolder;
+      }
+      .card-1 .card-content .rate {
+        font-size: 19px;
+        font-weight: bolder;
+      }
+      .card-1 .card-content .ti-1 {
+        font-size: 17px;
+      }
+      .card-1 .card-content .ti-2 {
+        font-size: 17px;
+      }
+      .card-1 .card-content .pro-details {
+        font-size: 16px;
+      }
+      .buy-content {
+        height: 450px;
+        width: 300px;
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+        border-radius: 5px;
+        margin-left: 80px;
+        margin-top: 70px;
+      }
+      .buy-content h1 {
+        padding-left: 30px;
+        color: rgb(252, 0, 0);
+        font-weight: bolder;
+      }
+      .buy-content .tit-1 {
+        font-size: 18px;
+        font-weight: 600;
+        padding-left: 20px;
+      }
+      .buy-content .tit-2 {
+        font-size: 18px;
+        font-weight: 600;
+        padding-left: 20px;
+      }
+      .buy-content .buy-details {
+        padding-left: 25px;
+      }
+      .buy-content .btn {
+        margin-left: 50px;
+        margin-top: 30px;
+        border-radius: 5px;
+        border: 1px solid rgb(252, 0, 0);
+        background: transparent;
+      }
+      .buy-content a {
+        text-decoration: none;
+        padding: 10px 70px;
+        position: relative;
+        display: inline-block;
+        font-weight: bolder;
+      }
+      .buy-content .btn:hover,
+      .btn:focus {
+        box-shadow: rgba(255, 0, 0, 0.74) 0px 3px 8px;
+      }
+
+      .card-1#blur.active {
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+      }
+      #popup {
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .popup-content {
+        width: 50%;
+        height: 400px;
+        color: white;
+        border: 1px solid rgb(252, 252, 252);
+        backdrop-filter: blur(6px);
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-content svg {
+        padding-left: 560px;
+        padding-top: 20px;
+        border-radius: 50%;
+      }
+      .popup-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding-right: 30px;
+      }
+      .popup-info .input {
+        border: 1px solid white;
+        width: 170px;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .popup-details {
+        display: wrap;
+        padding: 20px;
+      }
+      .popup-details input {
+        width: 40%;
+        height: 40px;
+        background: none;
+        outline: none;
+        border: 1px solid rgb(252, 252, 252);
+        backdrop-filter: blur(6px);
+        border-radius: 5px;
+      }
+      .popup-details input::placeholder {
+        color: white;
+        font-size: 15px;
+      }
+      .popup-details input:focus,
+      input:hover {
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+        border: 2px solid black;
+      }
+
+      .popup-content .name-pop {
+        margin: 20px;
+      }
+      .popup-content .addr-pop {
+        margin-left: 20px;
+        width: 85%;
+        height: 150px;
+      }
+      .btns-pop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+      }
+      .btns-pop a {
+        text-decoration: none;
+        width: 100px;
+        padding: 10px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      #popup .close {
+        background-color: tomato;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bolder;
+      }
+      #popup .close:hover,
+      .close:focus {
+        background-color: rgb(204, 63, 38);
+        transform: scale(1.05);
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+      }
+      #popup .next-btn:hover,
+      .next-btn:focus {
+        background-color: green;
+        transform: scale(1.09);
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+      }
+      @media screen and (max-width: 600px) {
+        .header {
+          height: 40px;
+        }
+        .header .navbar a {
+          font-size: 10px;
+          padding-left: 10px;
+          padding-top: 15px;
+        }
+      }
+
+      .cart-items {
+        margin-top: 15px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .cart-item {
+        background: #222;
+        padding: 8px 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      #popup .next-btn {
+        background-color: rgb(42, 218, 42);
+        font-weight: bold;
+        font-size: 15px;
+        color: whitesmoke;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .next-btn a {
+        text-decoration: none;
+        width: 100px;
+      }
+
+      /* @media (max-width: 1024px) {
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            
+        }
+        .card-1 {
+            padding: 0;
+          flex-direction: column;
+          align-items: center;
+        }
+        .img-card img {
+          width: 200px;
+          height: 100px;
+          padding: 0;
+        }
+        .buy-content {
+          width: 90%;
+        }
+      }
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          height: auto;
+          padding: 10px;
+        }
+        .navbar a {
+          margin: 10px 0;
+          display: block;
+          text-align: center;
+        }
+        .card-content {
+          padding-right: 50px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .logo {
+          font-size: 18px;
+        }
+        .navbar a {
+          font-size: 16px;
+        }
+        .img-card img {
+          width: 100%;
+        }
+        .buy-content {
+          padding: 15px;
+          font-size: 14px;
+        }
+        .popup-content {
+          padding: 15px;
+        }
+        .popup-info {
+          flex-direction: column;
+          align-items: center;
+        }
+      } */
+       @media (max-width: 1024px) {
+        .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card-1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .img-card img {
+    width: 80%;
+    max-width: 320px;
+  }
+  .buy-content {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .popup-content {
+    width: 70%;
+    height: auto;
+    padding: 25px;
+    font-size: 15px;
+  }
+  .popup-details input {
+    width: 70%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+    .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
+  .navbar {
+    margin-top: 10px;
+  }
+  .navbar a {
+    display: block;
+    margin: 8px 0;
+    font-size: 17px;
+  }
+  .card-content {
+    padding: 15px;
+  }
+  .buy-content {
+    width: 90%;
+  }
+  .popup-content {
+    width: 85%;
+    height: auto;
+    padding: 20px;
+    font-size: 14px;
+  }
+  .popup-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .popup-details input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .btns-pop {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .btns-pop a {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+  .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbar{
+    padding: 0;
+
+  }
+  .navbar a {
+    font-size: 15px;
+  }
+  .img-card img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  .card-content {
+    padding: 10px;
+    font-size: 15px;
+  }
+  .buy-content {
+    padding: 12px;
+    font-size: 14px;
+    width: 95%;
+  }
+  .popup-content {
+    padding: 12px;
+    gap: 15px;
+  }
+  .popup-info {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .popup-info .input {
+    width: 100%;
+  }
+  .btns-pop {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #popup .close,
+  #popup .next-btn {
+    width: 100%;
+    text-align: center;
+  }
+ .popup-content {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  .popup-info .input {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+  }
+  .popup-details input {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px;
+  }
+  .btns-pop {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btns-pop a {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+     <div class="logo-info">
+         <a href="#" class="logo">Shop Smart</a>
+     </div>
+      <div class="navbar">
+        <a href="index.html" style="--i: 1">Home</a>
+      </div>
+    </header>
+
+    <div class="card-1" id="blur">
+      <div class="img-card">
+        <img src="pg1.webp" />
+      </div>
+      <div class="card-content">
+        <h1>zenith Watch</h1>
+        <h4>4.2|<i>5,252 rating </i></h4>
+        <h4 class="buy">1k+ bought in past month</h4>
+        <hr />
+        <p class="rate"><i>-30%</i> $$1,950</p>
+        <p class="ti-1">inclusive of all taxes</p>
+        <p class="ti-2"><i>EmI</i> start at $299. no cost EMI available</p>
+        <hr />
+        <p class="pro-details"><b>Color</b> Black</p>
+        <p class="pro-details"><b>Case diameter</b> 44 milimeters</p>
+        <p class="pro-details"><b>Band material type</b> leather</p>
+        <p class="pro-details"><b>warranty type </b> manufacturer</p>
+        <p class="pro-details"><b>watch movement</b> Quartz</p>
+        <p class="pro-details"><b>Item weight</b> 0.33 Pounds</p>
+        <p class="pro-details"><b>Country of Origin</b> india</p>
+
+        <hr />
+        <h2 class="about-card">About this item</h2>
+        <p class="abt-para">
+          case material type: stainless stell; warranty type:manufacturer;
+          <br />item shape:Round; Band color:black;
+        </p>
+        <p class="abt-para">
+          Band material: leather; Dial window material type: Mineral; watch<br />
+          movement type: Quartz
+        </p>
+      </div>
+      <div class="buy-content">
+        <h1>$1,1950</h1>
+        <p class="tit-1"><i>Free delivery</i></p>
+        <p class="tit-2">Add a pretection plan</p>
+        <hr />
+        <p class="buy-details"><b>Payment</b> secure transaction</p>
+        <p class="buy-details"><b>ship from</b> Shop Smart</p>
+        <p class="buy-details"><b>sold by </b> Cambium retails</p>
+        <p class="buy-details"><b>packaging</b> ships in product packaging</p>
+        <a href="#" class="btn" id="btn" onclick="toggle()">Buy Now</a>
+      </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <div class="popup-info">
+          <div class="input">
+            <input type="radio" name="payment" id="cod" checked />
+            <label for="cod">Cash on Delivery</label>
+          </div>
+          <div class="input">
+            <input type="radio" name="payment" id="gpay" />
+            <label for="gpay">Google pay</label>
+          </div>
+        </div>
+
+        <div class="popup-details" id="cod-details">
+          <input
+            type="text"
+            id="input"
+            class="name-pop"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="text"
+            id="input"
+            class="num-pop"
+            placeholder="Phone number"
+            required
+          />
+          <input
+            type="text"
+            id="input"
+            class="addr-pop"
+            placeholder="Address"
+            required
+          />
+        </div>
+
+        <div class="btns-pop">
+          <a href="#" class="close">Close</a>
+          <a href="#" type="submit" class="next-btn" onclick="payNow()">Next</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById("btn").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "flex";
+      });
+      document.querySelector(".close").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+      });
+
+      const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const cartList = document.getElementById("cartList");
+      const totalAmount = document.getElementById("totalAmount");
+
+      let total = 0;
+      cart.forEach((item) => {
+        const li = document.createElement("li");
+        li.innerText = `${item.name} - ₹${item.price} x ${item.quantity}`;
+        cartList.appendChild(li);
+        total += item.price * item.quantity;
+      });
+
+      totalAmount.innerText = `Total Amount: ₹${total}`;
+
+      function payNow() {
+        localStorage.removeItem("cartItems");
+        window.location.href = "payment.html";
+      }
+      const codRadio = document.getElementById("cod");
+      const gpayRadio = document.getElementById("gpay");
+      const codDetails = document.getElementById("cod-details");
+      const gpayDetails = document.getElementById("gpay-details");
+
+      codRadio.addEventListener("change", () => {
+        codDetails.style.display = "block";
+        gpayDetails.style.display = "none";
+      });
+
+      gpayRadio.addEventListener("change", () => {
+        codDetails.style.display = "none";
+        gpayDetails.style.display = "block";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+        header{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(162, 219, 219);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+}
+.logo{
+    font-size: 22px;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-left: 5%;
+    padding-top: 30px;
+    color: black;
+}
+.logo:hover {
+    border-bottom: 4px solid red;
+}
+.navbar{
+    padding-left: 70%;
+}
+.navbar a{
+    padding-left: 20px;
+    font-size: 19px;
+    font-weight:bolder;
+    text-decoration: none;
+    color: black;  
+}
+nav a:hover , nav a.active{
+    text-decoration: underline solid red 2px;
+}
+.navbar a:hover , a:focus{
+    text-decoration: underline solid red 2px;
+}
+
+/*content...............................*/
+.card-1{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 40px;
+}
+.img-card img{
+    width: 350px;
+    height: 80%;
+    padding-left: 50px;
+    padding-top: 60px;
+}
+.card-1 .card-content{
+    padding-left: 80px;
+}
+.card-1 .card-content h4{
+    font-weight: bolder;
+}
+.card-1 .card-content .rate i{
+    color: rgb(252, 0, 0);
+    font-size: 19px;
+    font-weight: bolder;
+}
+.card-1 .card-content .rate{
+    font-size: 19px;
+    font-weight: bolder;
+}
+.card-1 .card-content .ti-1{
+    font-size: 17px;
+}
+.card-1 .card-content .ti-2{
+    font-size: 17px;
+}
+.card-1 .card-content .pro-details{
+    font-size: 16px;
+}
+.buy-content{
+    height: 450px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    border-radius: 5px;
+    margin-left: 80px;
+    margin-top: 70px;
+}
+.buy-content h1{
+    padding-left: 30px;
+    color: rgb(252, 0, 0);
+    font-weight: bolder;
+}
+.buy-content .tit-1{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.buy-content .tit-2{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.buy-content .buy-details{
+    padding-left: 25px;
+}
+.buy-content .btn{
+    margin-left: 50px;
+    margin-top: 30px;
+    border-radius: 5px; 
+    border: 1px solid  rgb(252, 0, 0); 
+    background: transparent;
+}
+.buy-content a{
+    text-decoration: none;
+    padding: 10px 70px;
+    position: relative;
+    display: inline-block;
+    font-weight: bolder;
+}
+.buy-content .btn:hover , .btn:focus{
+    box-shadow: rgba(255, 0, 0, 0.74) 0px 3px 8px;
+}
+
+#popup{
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.popup-content{
+    width: 40%;
+    height: 500px;
+    background: #fff;
+}
+.popup-content svg{
+    padding-left: 560px;
+    padding-top: 20px;
+    border-radius: 50%;
+}
+.popup-info{
+    display: flex;
+    gap: 20px;
+    padding-left: 60px;
+}
+.popup-details{
+    display: wrap;
+    padding: 20px;
+}
+.popup-details input{
+    width: 40%;
+    height: 40px;
+    border: 1px solid rgb(137, 131, 131);
+    border-radius: 5px;
+}
+.popup-details input:focus , input:hover{
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    border: 2px solid black;
+}
+.popup-content .name-pop{
+    margin: 20px;
+}
+.popup-content .addr-pop{
+    margin-left: 20px;
+    width: 85%;
+    height: 150px;
+}
+.btns-pop{
+    padding-left: 40px;
+}
+#popup .close{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px 35px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+#popup .close:hover , .close:focus{
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+}
+
+.cart-items {
+  margin-top: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  background: #222;
+  padding: 8px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Shop Smart</a>
+        <nav class="navbar">
+            <a href="#Home" style="--i:1">Home</a>
+            <a href="#Fashion" style="--i:2" class="active" >Fashion</a>
+            <a href="#myaccount" style="--i:3" >My Account</a>
+        </nav>
+    </header>
+
+    <div class="card-1">
+        <div class="img-card">
+            <img src="pg2.webp">
+        </div>
+        <div class="card-content">
+           <h1>zenith Watch</h1>
+           <h4>4.2|<i>5,252 rating </i> </h4>
+           <h4 class="buy">1k+ bought in past month</h4>
+           <hr>
+           <p class="rate"><i>-30%</i> $1,950</p>
+           <p class="ti-1">inclusive of all taxes</p>
+           <p class="ti-2"><i>EmI</i> start at $299. no cost EMI available</p>
+           <hr>
+           <p class="pro-details"><b>Color</b> Blue</p>
+           <p class="pro-details"><b>Case diameter</b> 44 milimeters</p>
+           <p class="pro-details"><b>Band material type</b> leather</p>
+           <p class="pro-details"><b>warranty type </b> manufacturer</p>
+           <p class="pro-details"><b>watch movement</b> Quartz</p>
+           <p class="pro-details"><b>Item weight</b> 0.33 Pounds</p>
+           <p class="pro-details"><b>Country of Origin</b> india</p>
+
+           <hr>
+           <h2 class="about-card">About this item</h2>
+           <p class="abt-para">case material type: stainless stell; warranty type:manufacturer; <br>item shape:Round; Band color:blue;</p>
+            <p class="abt-para">Band material: leather; Dial window material type: Mineral; watch<br> movement type: Quartz</p>
+        </div>
+        <div class="buy-content">
+            <h1> $1,950</h1>
+            <p class="tit-1"><i>Free delivery</i></p>
+            <p class="tit-2">Add a pretection plan</p>
+            <hr>
+            <p class="buy-details"><b>Payment</b> secure transaction</p>
+            <p class="buy-details"><b>ship from</b> Shop Smart</p>
+            <p class="buy-details"><b>sold by </b> Cambium retails</p>
+            <p class="buy-details"><b>packaging</b> ships in product packaging</p>
+            <a href="#" class="btn" id="btn" onclick="toggle()">Buy Now</a>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <?xml version="1.0" ?><svg height="16"  viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><polygon fill-rule="evenodd" points="8 9.414 3.707 13.707 2.293 12.293 6.586 8 2.293 3.707 3.707 2.293 8 6.586 12.293 2.293 13.707 3.707 9.414 8 13.707 12.293 12.293 13.707 8 9.414"/></svg>
+            <div class="popup-info">
+                <input type="radio">
+                <h2>Cash on delivery</h2>
+            </div>
+            <div class="popup-details">
+                <input type="text" class="name-pop" placeholder="Name" required>
+                <input type="text" class="num-pop" placeholder="Phone number" required>
+                <input type="text" class="addr-pop" placeholder="address" required>
+            </div>
+            <div class="btns-pop">
+        <a href="#" class="close" >close</a>
+    </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('btn').addEventListener("click", function(){
+         document.querySelector('.popup').style.display = "flex";
+        });
+        document.querySelector('.close').addEventListener("click", function(){
+         document.querySelector('.popup').style.display = "none";
+         alert("order placed")
+        });
+     </script>
+</body>
+</html>
